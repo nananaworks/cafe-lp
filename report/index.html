@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="GW期間中に実施した、ChatGPT・Figma・Claude Code・Figma MCPを活用したLP制作フロー検証の報告ページです。">
+  <title>AI LP制作検証レポート | Production Report 2026</title>
+  <link rel="stylesheet" href="report.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ============================================
+       01. HERO
+       ============================================ -->
+  <section class="hero">
+    <div class="container">
+      <span class="hero-eyebrow">Production Report — 2026 GW</span>
+      <h1 class="hero-title">
+        AI × Figma<br>
+        × Claude Code<br>
+        LP制作検証レポート
+      </h1>
+      <p class="hero-sub">
+        ChatGPTでのモックアップ生成から、Figma正解データ化、<br>
+        Claude Code実装、最終調整までの制作フロー検証
+      </p>
+      <div class="hero-period">2026.05.02 — 2026.05.06</div>
+      <div class="hero-cta">
+        <!--
+          ▼ 完成LP リンク
+          GitHub Pages公開後は下記URLを差し替えてください。
+          例：https://[username].github.io/[repo-name]/index.html
+          ローカル確認用：../index.html
+        -->
+        <a href="../index.html" class="btn btn-primary" target="_blank" rel="noopener noreferrer">完成LPを見る</a>
+
+        <!-- ページ内の制作レポートセクションへスクロール -->
+        <a href="#report" class="btn btn-outline">制作レポートを見る</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       02. OVERVIEW
+       ============================================ -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Overview</span>
+        <h2 class="section-title">Project Overview</h2>
+      </div>
+      <div class="overview-body">
+        <p class="overview-text">
+          GW期間を使って、ChatGPT、Figma、Claude Code、Figma MCPを活用したLP制作フローを検証しました。単にAIでページを生成するのではなく、AI生成モックアップ、Figmaでの正解データ化、Claude CodeでのHTML/CSS/JavaScript実装、人による最終調整までを一連の制作プロセスとして検証しています。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       03. DELIVERABLES
+       ============================================ -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Deliverables</span>
+        <h2 class="section-title">Deliverables</h2>
+      </div>
+      <div class="grid grid-3">
+
+        <!-- 成果物 1：完成LP -->
+        <div class="card deliverable-card">
+          <div class="card-num">01</div>
+          <h3 class="card-title">完成LP</h3>
+          <p class="card-desc">Figma MCPとClaude Codeを活用して構築したカフェLPの完成版</p>
+          <!--
+            ▼ 完成LP リンク
+            GitHub Pages公開後はURLを差し替えてください。
+            例：https://[username].github.io/[repo-name]/index.html
+          -->
+          <a href="../index.html" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">LPを見る</a>
+        </div>
+
+        <!-- 成果物 2：制作報告書 -->
+        <div class="card deliverable-card">
+          <div class="card-num">02</div>
+          <h3 class="card-title">制作報告書</h3>
+          <p class="card-desc">制作ログ、検証結果、課題、今後の展開をまとめた報告ドキュメント</p>
+          <!--
+            ▼ 制作報告書 リンク
+            GoogleドキュメントやPDFのURLに差し替えてください。
+            例：https://docs.google.com/document/d/[document-id]/edit
+            現在：同ページ内の #report セクションへ遷移
+          -->
+          <a href="#report" class="btn btn-primary btn-sm">報告内容を見る</a>
+        </div>
+
+        <!-- 成果物 3：検証資料 -->
+        <div class="card deliverable-card">
+          <div class="card-num">03</div>
+          <h3 class="card-title">検証資料</h3>
+          <p class="card-desc">ChatGPTモックアップ、Claude Design生成、Figma MCP + Claude Code制作の比較画像</p>
+          <a href="#comparison" class="btn btn-primary btn-sm">比較を見る</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       04. PRODUCTION FLOW
+       ============================================ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label section-label-light">Process</span>
+        <h2 class="section-title section-title-light">Production Flow</h2>
+      </div>
+      <div class="flow-steps">
+
+        <div class="flow-step">
+          <div class="flow-step-inner">
+            <div class="flow-num">01</div>
+            <div class="flow-text">
+              <div class="flow-icon-label">ChatGPT</div>
+              <p class="flow-desc">LP構成案・モックアップ画像を生成</p>
+            </div>
+          </div>
+          <div class="flow-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-inner">
+            <div class="flow-num">02</div>
+            <div class="flow-text">
+              <div class="flow-icon-label">Figma</div>
+              <p class="flow-desc">モック画像をもとに素材整理・正解データ化</p>
+            </div>
+          </div>
+          <div class="flow-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-inner">
+            <div class="flow-num">03</div>
+            <div class="flow-text">
+              <div class="flow-icon-label">Claude Code</div>
+              <p class="flow-desc">Figma MCP連携でHTML / CSS / JavaScript実装</p>
+            </div>
+          </div>
+          <div class="flow-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-inner">
+            <div class="flow-num">04</div>
+            <div class="flow-text">
+              <div class="flow-icon-label">Manual Adjust</div>
+              <p class="flow-desc">崩れた箇所を人力で修正</p>
+            </div>
+          </div>
+          <div class="flow-connector" aria-hidden="true"></div>
+        </div>
+
+        <div class="flow-step">
+          <div class="flow-step-inner">
+            <div class="flow-num">05</div>
+            <div class="flow-text">
+              <div class="flow-icon-label">GitHub</div>
+              <p class="flow-desc">制作物と報告ページを共有</p>
+            </div>
+          </div>
+          <!-- 最終ステップのため flow-connector なし -->
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       05. WORKFLOW COMPARISON
+       ============================================ -->
+  <section id="comparison" class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Comparison</span>
+        <h2 class="section-title">Workflow Comparison</h2>
+      </div>
+      <div class="grid grid-3">
+
+        <!-- 比較 1：ChatGPT モックアップ -->
+        <div class="card comparison-card">
+          <div class="comparison-img-wrap">
+            <!-- ここに ChatGPTモックアップ画像を配置 -->
+            <!-- 画像ファイル例：images/chatgpt-mockup.png -->
+            <!-- <img src="images/chatgpt-mockup.png" alt="ChatGPTで生成したモックアップ画像"> -->
+            <div class="img-placeholder">
+              <span class="placeholder-icon">🖼</span>
+              <span class="placeholder-label">ChatGPT Mockup</span>
+              <span class="placeholder-note">images/chatgpt-mockup.png<br>を配置してください</span>
+            </div>
+          </div>
+          <div class="comparison-body">
+            <span class="tool-badge">ChatGPT</span>
+            <h3 class="comparison-title">ChatGPTで生成したモックアップ画像</h3>
+            <p class="comparison-desc">初期の世界観・構成確認には有効。ただし実装にはFigmaでの正解データ化が必要。</p>
+          </div>
+        </div>
+
+        <!-- 比較 2：Claude Design -->
+        <div class="card comparison-card">
+          <div class="comparison-img-wrap">
+            <!-- ここに Claude Design生成画像を配置 -->
+            <!-- 画像ファイル例：images/claude-design.png -->
+            <!-- <img src="images/claude-design.png" alt="Claude Designで生成した画像"> -->
+            <div class="img-placeholder">
+              <span class="placeholder-icon">🖼</span>
+              <span class="placeholder-label">Claude Design</span>
+              <span class="placeholder-note">images/claude-design.png<br>を配置してください</span>
+            </div>
+          </div>
+          <div class="comparison-body">
+            <span class="tool-badge">Claude Design</span>
+            <h3 class="comparison-title">Claude Designでそのまま生成</h3>
+            <p class="comparison-desc">HTML/CSS基盤としては使えるが、AIっぽさや元デザインとの差異が残りやすい。</p>
+          </div>
+        </div>
+
+        <!-- 比較 3：Figma MCP + Claude Code -->
+        <div class="card comparison-card">
+          <div class="comparison-img-wrap">
+            <!-- ここに Figma MCP + Claude Code制作画像を配置 -->
+            <!-- 画像ファイル例：images/figma-mcp-result.png -->
+            <!-- <img src="images/figma-mcp-result.png" alt="Figma MCP + Claude Code制作の完成画像"> -->
+            <div class="img-placeholder">
+              <span class="placeholder-icon">🖼</span>
+              <span class="placeholder-label">Figma MCP + Claude Code</span>
+              <span class="placeholder-note">images/figma-mcp-result.png<br>を配置してください</span>
+            </div>
+          </div>
+          <div class="comparison-body">
+            <span class="tool-badge tool-badge-accent">Figma MCP + Claude Code</span>
+            <h3 class="comparison-title">Figma MCP + Claude Code + CMDでの制作</h3>
+            <p class="comparison-desc">Figma正解データをもとに実装でき、今回の検証では最も実務向きのフロー。</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       06. REPORT
+       ============================================ -->
+  <section id="report" class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Report</span>
+        <h2 class="section-title">制作ログ・検証結果</h2>
+      </div>
+      <div class="report-grid">
+
+        <div class="report-block">
+          <div class="report-block-label">対象期間</div>
+          <p class="report-block-value">2026年5月2日〜5月6日</p>
+        </div>
+
+        <div class="report-block">
+          <div class="report-block-label">目的</div>
+          <p class="report-block-value">AIツールを活用したLP制作フローの検証と、非属人化に向けた制作手順の整理</p>
+        </div>
+
+        <div class="report-block report-block-wide">
+          <div class="report-block-label">主な成果</div>
+          <ul class="report-list">
+            <li>ChatGPTでLPモックアップを生成</li>
+            <li>Figmaで正解データを作成</li>
+            <li>Figma MCPとClaude CodeをWindows / CMD環境で連携</li>
+            <li>HTML / CSS / JavaScriptでLP基盤を構築</li>
+            <li>FAQアコーディオン・TOPボタン・Googleマップ埋め込みを実装</li>
+            <li>GitHub共有に向けた構成を検討</li>
+          </ul>
+        </div>
+
+        <div class="report-block report-block-wide">
+          <div class="report-block-label">課題</div>
+          <ul class="report-list report-list-warn">
+            <li>AI生成だけでは実務品質に届きにくい</li>
+            <li>細かいレイアウト調整は人力修正が必要</li>
+            <li>Claude Codeは利用制限がある</li>
+            <li>画像素材の整理とパス管理が重要</li>
+          </ul>
+        </div>
+
+        <div class="report-conclusion">
+          <div class="report-conclusion-label">結論</div>
+          <blockquote class="report-quote">
+            「ChatGPTで方向性を作り、Figmaで正解データ化し、Claude Codeで実装し、人が最終調整する流れが現時点で最も実務向き」
+          </blockquote>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       07. KEY FINDINGS
+       ============================================ -->
+  <section class="section section-white">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Insights</span>
+        <h2 class="section-title">Key Findings</h2>
+      </div>
+      <div class="grid grid-4">
+
+        <div class="card">
+          <div class="finding-num">01</div>
+          <h3 class="finding-title">AIは初速に強い</h3>
+          <p class="finding-desc">ChatGPTはモックアップ生成や構成案作成に有効。ただし、そのまま実装品質にするには追加工程が必要。</p>
+        </div>
+
+        <div class="card">
+          <div class="finding-num">02</div>
+          <h3 class="finding-title">Figma正解データが重要</h3>
+          <p class="finding-desc">Figmaでpx・余白・素材・レイアウトを整えることで、Claude Codeへの指示精度が上がる。</p>
+        </div>
+
+        <div class="card">
+          <div class="finding-num">03</div>
+          <h3 class="finding-title">Claude Codeは実装補助に強い</h3>
+          <p class="finding-desc">HTML / CSS / JavaScriptの構築や修正に有効。ただし、範囲指定と人力確認が必須。</p>
+        </div>
+
+        <div class="card">
+          <div class="finding-num">04</div>
+          <h3 class="finding-title">非属人化の可能性</h3>
+          <p class="finding-desc">プロンプト・Figma構成・GitHub管理を整備すれば、今後のLP制作フローとして展開可能。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       08. NEXT ACTION
+       ============================================ -->
+  <section class="section section-light">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Next Steps</span>
+        <h2 class="section-title">Next Action</h2>
+      </div>
+      <div class="next-action-wrap">
+        <ul class="next-action-list">
+          <li class="next-action-item">
+            <span class="next-num">01</span>
+            <span class="next-text">GitHub Pagesで完成LPと報告ページを共有</span>
+          </li>
+          <li class="next-action-item">
+            <span class="next-num">02</span>
+            <span class="next-text">業種別LP制作テンプレートの作成</span>
+          </li>
+          <li class="next-action-item">
+            <span class="next-num">03</span>
+            <span class="next-text">Claude Code用プロンプト集の整備</span>
+          </li>
+          <li class="next-action-item">
+            <span class="next-num">04</span>
+            <span class="next-text">Windows / CMD環境でのClaude Code手順書作成</span>
+          </li>
+          <li class="next-action-item">
+            <span class="next-num">05</span>
+            <span class="next-text">assets命名ルール・画像書き出しルールの整備</span>
+          </li>
+          <li class="next-action-item">
+            <span class="next-num">06</span>
+            <span class="next-text">Slim Studio制作フローへの応用</span>
+          </li>
+          <li class="next-action-item">
+            <span class="next-num">07</span>
+            <span class="next-text">広告運用AI補助への横展開</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       09. FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">AI LP Production Report</div>
+      <a href="#" class="footer-top-link" aria-label="ページ上部へ戻る">↑ TOP</a>
+      <div class="footer-right">Created by Toku / 2026</div>
+    </div>
+  </footer>
+
+</body>
+</html>

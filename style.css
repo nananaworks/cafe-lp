@@ -1,0 +1,1323 @@
+/* ============================================================
+   margot COFFEE & BAKE
+   ============================================================ */
+
+
+/* ── 1. Design Tokens ───────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-accent:  #C04E2A;   /* テラコッタ */
+  --color-text:    #3D2212;   /* ダークブラウン */
+  --color-nav:     #686259;   /* ウォームグレー */
+  --color-bg:      #F5EDE0;   /* クリームベージュ */
+
+  /* Fonts */
+  --font-serif: 'Noto Serif JP', serif;
+  --font-sans:  'Noto Sans JP', sans-serif;
+}
+
+
+/* ── 2. Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+}
+
+a   { text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+
+/* ── 3. Components ──────────────────────────────────────────── */
+
+/* 3.1 Button ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  border-radius: 50px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover { opacity: 0.8; }
+
+.btn__icon { flex-shrink: 0; }
+
+.btn--primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  padding: 18px 32px;
+}
+
+.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  padding: 17px 32px;
+}
+
+/* ヘッダー右端のCTA */
+.btn--sm {
+  font-size: 14px;
+  padding: 15px 26px;
+}
+
+
+/* 3.2 Header ─────────────────────────────────────────────── */
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 128px;
+  padding: 0 61px 0 79px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.header__logo { flex-shrink: 0; }
+
+.header__logo img {
+  width: 160px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-nav);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover { color: var(--color-accent); }
+
+/* CTAボタンを右端に固定 */
+.header__cta {
+  margin-left: auto;
+}
+
+
+/* ── 4. Sections ────────────────────────────────────────────── */
+
+/* 4.1 FV ─────────────────────────────────────────────────── */
+.fv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-width: 1280px;
+  min-height: 719px;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+.fv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;
+}
+
+
+/* 4.2 Hero ───────────────────────────────────────────────── */
+.hero {
+  position: relative;
+  z-index: 10;
+  height: calc(100vh - 128px);
+  min-height: 591px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hero__botanical {
+  position: absolute;
+  top: 0;
+  left: 30.85%;
+  width: 9.24%;
+  aspect-ratio: 1;
+  z-index: 1;
+}
+
+.hero__botanical img {
+  width: 100%;
+  height: auto;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 36px;
+  padding-left: 138px;
+  max-width: 540px;
+}
+
+.hero__headline {
+  font-family: var(--font-serif);
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.hero__sub {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2.0;
+  color: var(--color-text);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.hero__btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+
+/* ── 5. 以降のセクション ────────────────────────────────────── */
+
+
+/* ─ section-inner（全セクション共通の内包コンテナ）────────── */
+.section-inner {
+  position: relative;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.concept .section-inner            { height: 485px; }
+.section-menu .section-inner       { height: 559px; }
+.section-space .section-inner      { height: 588px; }
+.section-commitment .section-inner { height: 471px; }
+.section-voice .section-inner      { height: 373px; }
+.section-access-faq .section-inner {
+  overflow: visible;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  padding: 48px 80px 52px;
+  column-gap: 48px;
+  box-sizing: border-box;
+}
+
+
+/* 5.1 Concept ───────────────────────────────────────────── */
+.concept {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #fcf9f6;
+}
+
+.concept__photo-main {
+  position: absolute;
+  left: 162px;
+  top: 75px;
+  width: 526px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.concept__photo-sub {
+  position: absolute;
+  left: 678px;
+  top: 65px;
+  width: 177px;
+  height: 98px;
+  object-fit: cover;
+}
+
+.concept__body {
+  position: absolute;
+  left: 730px;
+  top: 174px;
+}
+
+.concept__label {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+
+.concept__catch {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 17px;
+}
+
+.concept__text {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 22.9px;
+}
+
+.concept__accent {
+  position: absolute;
+  left: 996px;
+  top: 255px;
+  width: 162px;
+  height: 162px;
+  object-fit: cover;
+}
+
+
+/* 5.2 Menu ──────────────────────────────────────────────── */
+.section-menu {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #f9f6f1;
+}
+
+.section-menu__deco {
+  position: absolute;
+  left: 159px;
+  top: 25px;
+  width: 235px;
+  height: 108px;
+  object-fit: contain;
+}
+
+.section-menu__heading {
+  position: absolute;
+  left: 203px;
+  top: 121px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
+
+.section-menu__cards {
+  position: absolute;
+  top: 170px;
+  left: 202px;
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Menu Card ────────────────────────────────────────── */
+.menu-card {
+  width: 250px;
+}
+
+.menu-card__img {
+  width: 250px;
+  height: 170px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.menu-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__body {
+  background: #fff;
+  border: 1px solid #f0e8e1;
+  border-radius: 0 0 10px 10px;
+  padding: 20px 15px;
+}
+
+.menu-card__name {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 25px;
+  margin-bottom: 4px;
+}
+
+.menu-card__desc {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 17px;
+  margin-bottom: 10px;
+}
+
+.menu-card__price {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 23px;
+}
+
+
+/* 5.3 Space ──────────────────────────────────────────────── */
+.section-space {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #ffffff;
+}
+
+.space__photo-main {
+  position: absolute;
+  left: 162px;
+  top: 112px;
+  width: 523px;
+  height: 344px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.space__photo-round {
+  position: absolute;
+  overflow: hidden;
+}
+
+.space__photo-round--tl {
+  left: 142px;
+  top: 82px;
+  width: 154px;
+  height: 154px;
+}
+
+.space__photo-round--br {
+  left: 566px;
+  top: 333px;
+  width: 146px;
+  height: 146px;
+}
+
+.space__photo-round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.space__photo-wide {
+  position: absolute;
+  left: 769px;
+  top: 121px;
+  width: 127px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.space__photo-sq1 {
+  position: absolute;
+  left: 951px;
+  top: 136px;
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.space__photo-sq2 {
+  position: absolute;
+  left: 1025px;
+  top: 201px;
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.space__body {
+  position: absolute;
+  left: 785px;
+  top: 218px;
+  width: 254px;
+}
+
+.space__catch {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 13px;
+}
+
+.space__text {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 22.9px;
+}
+
+.space__icons {
+  position: absolute;
+  left: 785px;
+  top: 365px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.space__icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 70px;
+}
+
+.space__icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #f5ede0;
+  color: #5a5144;
+  flex-shrink: 0;
+}
+
+.space__icon-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* 5.4 Commitment ─────────────────────────────────────────── */
+.section-commitment {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #f9f6f1;
+}
+
+.commitment__title-img {
+  position: absolute;
+  left: 106px;
+  top: 48px;
+  width: 260px;
+  height: 107px;
+  object-fit: contain;
+}
+
+.commitment__cols {
+  position: absolute;
+  left: 162px;
+  top: 173px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.commitment__col {
+  width: 152px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.commitment__col--wide {
+  width: 196px;
+}
+
+.commitment__icon-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ede4d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7px;
+  flex-shrink: 0;
+}
+
+.commitment__divider {
+  width: 1px;
+  height: 163px;
+  background-color: #cec4ba;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin: 33px 34px 0;
+}
+
+.commitment__heading {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 30px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+.commitment__text {
+  font-family: var(--font-serif);
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 21px;
+}
+
+.commitment__photo-mask {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 413px;
+  height: 471px;
+  overflow: hidden;
+}
+
+.commitment__photo-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 5.5 Voice ─────────────────────────────────────────────── */
+.section-voice {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #ffffff;
+}
+
+.voice__side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 373px;
+}
+
+.voice__deco {
+  position: absolute;
+  left: 144px;
+  top: 125px;
+  width: 144px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.voice__label {
+  position: absolute;
+  left: 167px;
+  top: 198px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+.voice__cards {
+  position: absolute;
+  left: 320px;
+  top: 89px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.voice-card {
+  position: relative;
+  width: 306px;
+  height: 220px;
+  background-color: #ffffff;
+  border: 2px solid #f9f6f1;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.voice-card__stars {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 20px 0 0 0;
+}
+
+.voice-card__star-marks {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-accent);
+  letter-spacing: 2px;
+}
+
+.voice-card__score {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+.voice-card__text {
+  position: absolute;
+  left: 21px;
+  top: 66px;
+  width: 230px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 24px;
+}
+
+.voice-card__user {
+  position: absolute;
+  left: 18px;
+  top: 158px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-card__avatar {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.voice-card__name {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 19px;
+  white-space: nowrap;
+}
+
+
+/* ============================================================
+   5.6 Access / FAQ  — 2カラム flex レイアウト
+   左: よくあるご質問 / 右: アクセス
+   ============================================================ */
+
+.section-access-faq {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #f9f6f1;
+}
+
+/* 2カラム共通 */
+.af-col {
+  min-width: 0;
+}
+
+.af-col--faq {
+  min-width: 0;
+}
+
+.af-col--access {
+  min-width: 0;
+}
+
+/* ── FAQ カラム ─────────────────────────────────────────── */
+
+.af-faq__heading {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+.af-faq__list {
+  border-top: 1px solid #d9d9d9;
+}
+
+.af-faq__item {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.af-faq__q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 10px 0 4px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  cursor: pointer;
+  user-select: none;
+  transition: color 0.15s;
+}
+
+.af-faq__q:hover {
+  color: var(--color-accent);
+}
+
+.af-faq__item.is-open .af-faq__q {
+  color: var(--color-accent);
+}
+
+.af-faq__icon {
+  font-weight: 400;
+  font-size: 18px;
+  color: inherit;
+  flex-shrink: 0;
+  margin-left: 8px;
+  line-height: 1;
+  transition: color 0.15s;
+}
+
+.af-faq__a {
+  display: block;
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: #8a7e72;
+  letter-spacing: 0.04em;
+  line-height: 1.8;
+  padding: 0 10px 0 4px;
+  transition: max-height 0.38s ease, opacity 0.28s ease, padding 0.3s ease;
+}
+
+.af-faq__item.is-open .af-faq__a {
+  max-height: 200px;
+  opacity: 1;
+  padding: 2px 10px 14px 4px;
+}
+
+/* ── Access カラム ──────────────────────────────────────── */
+
+.af-access__heading {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.1em;
+  line-height: 1.4;
+  margin-bottom: 16px;
+}
+
+.af-access__info {
+  font-style: normal;
+}
+
+/* アクセス情報＋地図の横並びコンテナ */
+.af-access__body {
+  display: grid;
+  grid-template-columns: 1fr 180px;
+  gap: 20px;
+  align-items: start;
+}
+
+.af-access__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.af-access__row:first-child {
+  border-top: 1px solid #d9d9d9;
+}
+
+.af-access__label {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 400;
+  color: #5a5144;
+  width: 36px;
+  flex-shrink: 0;
+  padding-top: 1px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+.af-access__info dd {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.af-access__tel {
+  color: #5a5144;
+  text-decoration: none;
+}
+
+.af-access__map {
+  border-radius: 10px;
+  overflow: hidden;
+  width: 262px;
+  flex-shrink: 0;
+}
+
+.af-access__map img {
+  width: 100%;
+  height: 200px;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+}
+
+
+/* ============================================================
+   5.7 Final CTA
+   ============================================================ */
+
+.section-final-cta {
+  width: 100%;
+  min-width: 1280px;
+  position: relative;
+  background-image: url("assets/Mask group-7.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #3d2c1e;
+}
+
+.section-final-cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(249, 246, 241, 0.50);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.fcta__panel {
+  position: relative;
+  z-index: 1;
+  height: 270px;
+  max-width: 1280px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+/* 背景写真 */
+.fcta__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.fcta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* テキスト可読性オーバーレイ */
+.fcta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(249, 246, 241, 0.55);
+}
+
+/* 装飾写真カード */
+.fcta__photo {
+  position: absolute;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fcta__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fcta__photo--left {
+  left: 48px;
+  bottom: 0;
+  width: 200px;
+  height: 130px;
+}
+
+.fcta__photo--center {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+  width: 240px;
+  height: 130px;
+}
+
+.fcta__photo--right {
+  right: 48px;
+  bottom: 0;
+  width: 190px;
+  height: 120px;
+}
+
+/* コンテンツ（見出し・説明文・ボタン） */
+.fcta__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 52px;
+  z-index: 2;
+}
+
+.fcta__buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.fcta__heading {
+  font-family: var(--font-serif);
+  font-size: 35px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 50px;
+  margin: 0 0 8px;
+  text-align: center;
+}
+
+.fcta__subtext {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin: 0;
+  text-align: center;
+}
+
+
+/* ============================================================
+   6. Site Footer
+   ============================================================ */
+
+.site-footer {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #ffffff;
+  border-top: 1px solid #e8e2db;
+}
+
+/* 内側コンテナ（flexで横並び、max-widthで中央寄せ） */
+.site-footer__inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  gap: 28px;
+}
+
+/* ロゴ */
+.site-footer__logo-link {
+  display: block;
+  line-height: 0;
+  flex-shrink: 0;
+}
+
+.site-footer__logo {
+  width: 100px;
+  height: 50px;
+  object-fit: contain;
+  display: block;
+}
+
+/* SNS アイコン */
+.site-footer__social {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s;
+}
+
+.site-footer__social-link:hover {
+  opacity: 0.65;
+}
+
+.site-footer__social-link img {
+  display: block;
+  object-fit: contain;
+}
+
+/* ナビゲーション + コピーライト（中央寄せ） */
+.site-footer__nav-wrap {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.site-footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.site-footer__nav-link {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: #686259;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s;
+}
+
+.site-footer__nav-link:hover {
+  opacity: 0.65;
+}
+
+.site-footer__nav-sep {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #b0a89e;
+  line-height: 1;
+}
+
+.site-footer__copy {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 300;
+  color: #686259;
+  letter-spacing: 0.04em;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ページの先頭へ */
+.site-footer__totop {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.site-footer__totop:hover {
+  opacity: 0.65;
+}
+
+.site-footer__totop-arrow {
+  font-size: 12px;
+  color: #686259;
+  line-height: 1;
+}
+
+.site-footer__totop-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 300;
+  color: #686259;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+
+/* ============================================================
+   7. Motion & Transitions
+   ============================================================ */
+
+/* スムーズスクロール */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── ボタン hover ─────────────────────────────────────────── */
+.btn {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+/* ── ヘッダーナビ hover ───────────────────────────────────── */
+.nav-link {
+  transition: color 0.25s ease, transform 0.25s ease;
+  display: inline-block;
+}
+
+.nav-link:hover {
+  transform: translateY(-1px);
+}
+
+/* ── フッターナビ hover ───────────────────────────────────── */
+.site-footer__nav-link {
+  transition: color 0.25s ease, opacity 0.25s ease;
+}
+
+.site-footer__nav-link:hover {
+  opacity: 1;
+  color: var(--color-accent);
+}
+
+/* ── フッターSNS hover ────────────────────────────────────── */
+.site-footer__social-link {
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.site-footer__social-link:hover {
+  opacity: 0.75;
+  transform: translateY(-2px);
+}
+
+/* ── TOPボタン fixed 追従 ─────────────────────────────────── */
+.totop-fab {
+  position: fixed;
+  bottom: 36px;
+  right: 36px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 3px;
+  width: 52px;
+  height: 52px;
+  text-decoration: none;
+  background: #fff;
+  border: 1px solid #e0d9d0;
+  border-radius: 50%;
+  box-shadow: 0 2px 14px rgba(90, 81, 68, 0.13);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: opacity 0.35s ease, visibility 0.35s ease, transform 0.35s ease;
+}
+
+.totop-fab.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.totop-fab:hover {
+  opacity: 0.8 !important;
+  transform: translateY(-2px) !important;
+}
+
+.totop-fab__arrow {
+  font-size: 13px;
+  color: #686259;
+  line-height: 1;
+}
+
+.totop-fab__label {
+  font-family: var(--font-sans);
+  font-size: 8px;
+  font-weight: 300;
+  color: #686259;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}
+
+/* ── FAQ アコーディオン icon transition ──────────────────── */
+.af-faq__icon {
+  transition: color 0.25s ease;
+}
+
+.af-faq__q {
+  transition: color 0.25s ease, background-color 0.2s ease;
+}
+
+.af-faq__q:hover {
+  background-color: rgba(192, 78, 42, 0.04);
+}

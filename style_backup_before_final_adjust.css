@@ -1,0 +1,1287 @@
+/* ============================================================
+   margot COFFEE & BAKE
+   ============================================================ */
+
+
+/* ── 1. Design Tokens ───────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-accent:  #C04E2A;   /* テラコッタ */
+  --color-text:    #3D2212;   /* ダークブラウン */
+  --color-nav:     #686259;   /* ウォームグレー */
+  --color-bg:      #F5EDE0;   /* クリームベージュ */
+
+  /* Fonts */
+  --font-serif: 'Noto Serif JP', serif;
+  --font-sans:  'Noto Sans JP', sans-serif;
+}
+
+
+/* ── 2. Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+}
+
+a   { text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+
+/* ── 3. Components ──────────────────────────────────────────── */
+
+/* 3.1 Button ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  border-radius: 50px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover { opacity: 0.8; }
+
+.btn__icon { flex-shrink: 0; }
+
+.btn--primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  padding: 18px 32px;
+}
+
+.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  padding: 17px 32px;
+}
+
+/* ヘッダー右端のCTA */
+.btn--sm {
+  font-size: 14px;
+  padding: 15px 26px;
+}
+
+
+/* 3.2 Header ─────────────────────────────────────────────── */
+/*
+  Figma参照:
+    ロゴ  x=79   y=41   w=160  h=80
+    ナビ  x=477  y=63   (中央寄せ)
+    CTA   x=1020 y=24   w=196  h=104  → ヘッダー高さ = 24+104 = 128px
+    左右余白: 左=79px / 右=1277-1020-196=61px
+*/
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 128px;
+  padding: 0 61px 0 79px;
+}
+
+.header__logo { flex-shrink: 0; }
+
+.header__logo img {
+  width: 160px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-nav);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover { color: var(--color-accent); }
+
+
+/* ── 4. Sections ────────────────────────────────────────────── */
+
+/* 4.1 FV ─────────────────────────────────────────────────── */
+.fv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-width: 1280px;
+  min-height: 719px;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* 背景画像（左:ウォームテクスチャ + 右:カフェ写真 の合成1枚） */
+.fv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;   /* 左側テキストエリアを基準に拡縮 */
+}
+
+
+/* 4.2 Hero ───────────────────────────────────────────────── */
+/*
+  Figma参照:
+    ヒーロー = ヘッダー(128px)の下 残り全高
+    植物イラスト  x=394  y=128  w=118  h=118
+    見出し画像    x=138  y=164  w=388  h=152
+    サブコピー    x=138  y=296  w=357  h=160
+    ボタン群      x=141  y=433
+*/
+.hero {
+  position: relative;
+  z-index: 10;
+  height: calc(100vh - 128px);
+  min-height: 591px;
+}
+
+/* 植物イラスト（装飾） */
+.hero__botanical {
+  position: absolute;
+  top: 0;
+  left: 30.85%;    /* 394 / 1277 */
+  width: 9.24%;    /* 118 / 1277 */
+  aspect-ratio: 1;
+  z-index: 1;
+}
+
+.hero__botanical img {
+  width: 100%;
+  height: auto;
+}
+
+/* テキスト＋ボタン ブロック */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 36px;     /* 164 - 128(header) */
+  padding-left: 138px;   /* 見出しのFigma x座標 */
+  max-width: 540px;      /* テキストを左エリア内に収める */
+}
+
+.hero__headline {
+  font-family: var(--font-serif);
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.hero__sub {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2.0;
+  color: var(--color-text);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.hero__btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+
+/* ── 5. 以降のセクションはここに追加 ───────────────────────── */
+
+
+/* 5.1 Concept ───────────────────────────────────────────── */
+/*
+  Figma参照:
+    セクション高さ   h=485   bg=#fcf9f6
+    メイン写真       left=162  top=75   w=526  h=350
+    サブ写真         left=678  top=65   w=177  h=98
+    ラベル           left=730  top=174
+    キャッチ         left=730  top=220  (ラベル bottom+16px)
+    本文             left=730  top=297  (キャッチ bottom+17px)
+    アクセント写真   left=996  top=255  w=162  h=162
+*/
+.concept {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 485px;
+  background-color: #fcf9f6;
+  overflow: hidden;
+}
+
+.concept__photo-main {
+  position: absolute;
+  left: 162px;
+  top: 75px;
+  width: 526px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.concept__photo-sub {
+  position: absolute;
+  left: 678px;
+  top: 65px;
+  width: 177px;
+  height: 98px;
+  object-fit: cover;
+}
+
+.concept__body {
+  position: absolute;
+  left: 730px;
+  top: 174px;
+}
+
+.concept__label {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+
+.concept__catch {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 17px;
+}
+
+.concept__text {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 22.9px;
+}
+
+.concept__accent {
+  position: absolute;
+  left: 996px;
+  top: 255px;
+  width: 162px;
+  height: 162px;
+  object-fit: cover;
+}
+
+
+/* 5.2 Menu ──────────────────────────────────────────────── */
+/*
+  Figma参照:
+    セクション高さ   h=559   bg=#f9f6f1
+    装飾画像         left=159  top=25   w=235  h=108
+    見出し           left=203  top=121
+    カード行         top=170   left=202  gap=25px
+    カード           w=206  画像h=130  テキストh=123
+    角丸             10px（画像:上側 / テキスト:下側）
+    テキスト枠       bg=#fff  border=1px solid #f0e8e1
+*/
+.section-menu {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 559px;
+  background-color: #f9f6f1;
+  overflow: hidden;
+}
+
+.section-menu__deco {
+  position: absolute;
+  left: 159px;
+  top: 25px;
+  width: 235px;
+  height: 108px;
+  object-fit: contain;
+}
+
+.section-menu__heading {
+  position: absolute;
+  left: 203px;
+  top: 121px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+}
+
+.section-menu__cards {
+  position: absolute;
+  top: 170px;
+  left: 202px;
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── Menu Card ────────────────────────────────────────── */
+.menu-card {
+  width: 206px;
+}
+
+.menu-card__img {
+  width: 206px;
+  height: 130px;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.menu-card__img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card__body {
+  background: #fff;
+  border: 1px solid #f0e8e1;
+  border-radius: 0 0 10px 10px;
+  padding: 15px 14px 10px;
+}
+
+.menu-card__name {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 500;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 25px;
+  margin-bottom: 4px;
+}
+
+.menu-card__desc {
+  font-family: var(--font-serif);
+  font-size: 11px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 17px;
+  margin-bottom: 10px;
+}
+
+.menu-card__price {
+  font-family: var(--font-serif);
+  font-size: 14px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 23px;
+}
+
+
+/* 5.3 Space ──────────────────────────────────────────────── */
+/*
+  Figma参照:
+    セクション高さ   h=588   bg=#ffffff
+    メイン写真       left=162  top=112  w=523  h=344
+    丸写真①(左上)   left=142  top=82   w=154  h=154  (メイン写真左上に重なる)
+    丸写真②(右下)   left=566  top=333  w=146  h=146  (メイン写真右下に重なる)
+    小横長写真       left=769  top=121  w=127  h=66
+    正方形写真①     left=951  top=136  w=155  h=155
+    正方形写真②     left=1025 top=201  w=136  h=136  (①に一部重なる)
+    キャッチ         left=785  top=218  font=21px serif  color=#5a5144
+    本文             left=785  top=291  font=13px serif  color=#5a5144
+    アイコン行       left=785  top=365
+*/
+.section-space {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 588px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* ── 左エリア: メイン大写真 ─────────────────────────────── */
+.space__photo-main {
+  position: absolute;
+  left: 162px;
+  top: 112px;
+  width: 523px;
+  height: 344px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* 丸写真（Figma Mask group を border-radius:50% で再現） */
+.space__photo-round {
+  position: absolute;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.space__photo-round--tl {
+  left: 142px;
+  top: 82px;
+  width: 154px;
+  height: 154px;
+}
+
+.space__photo-round--br {
+  left: 566px;
+  top: 333px;
+  width: 146px;
+  height: 146px;
+}
+
+.space__photo-round img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── 右エリア: 装飾写真群 ───────────────────────────────── */
+.space__photo-wide {
+  position: absolute;
+  left: 769px;
+  top: 121px;
+  width: 127px;
+  height: 66px;
+  object-fit: cover;
+  border-radius: 3px;
+}
+
+.space__photo-sq1 {
+  position: absolute;
+  left: 951px;
+  top: 136px;
+  width: 155px;
+  height: 155px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.space__photo-sq2 {
+  position: absolute;
+  left: 1025px;
+  top: 201px;
+  width: 136px;
+  height: 136px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ── 右エリア: テキストブロック ─────────────────────────── */
+.space__body {
+  position: absolute;
+  left: 785px;
+  top: 218px;
+  width: 254px;
+}
+
+.space__catch {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 13px;
+}
+
+.space__text {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 22.9px;
+}
+
+/* ── 右エリア: 設備アイコン行 ───────────────────────────── */
+.space__icons {
+  position: absolute;
+  left: 785px;
+  top: 365px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.space__icon-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  width: 70px;
+}
+
+.space__icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #f5ede0;
+  color: #5a5144;
+  flex-shrink: 0;
+}
+
+.space__icon-label {
+  font-family: var(--font-sans);
+  font-size: 10px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+/* 5.4 Commitment ─────────────────────────────────────────── */
+/*
+  Figma参照:
+    セクション高さ   h=471   bg=#f9f6f1
+    タイトル画像     left=162  top=78   w=230  h=77
+    アイコン行       top=173  (列中心 x≈241 / 461 / 699)
+    縦区切り         x=309 / x=529  top=206  h=163
+    列見出し         top=262  font=18.32px  serif  color=#5a5144
+    本文             top=297  font=11.57px  serif  text-center
+    右マスク写真     left=864  w=413  h=471  SVGマスク→clip-pathで近似
+*/
+.section-commitment {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 471px;
+  background-color: #f9f6f1;
+  overflow: hidden;
+}
+
+/* セクションタイトル画像 */
+.commitment__title-img {
+  position: absolute;
+  left: 162px;
+  top: 78px;
+  width: 230px;
+  height: 77px;
+  object-fit: contain;
+}
+
+/* ── 3カラム コンテナ ────────────────────────────────────── */
+/*
+  left=162, top=173 でアイコン行に合わせる。
+  flex で 列→区切り→列→区切り→列 を横並び。
+*/
+.commitment__cols {
+  position: absolute;
+  left: 162px;
+  top: 173px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.commitment__col {
+  width: 152px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* 3列目は見出しが長いので幅を広げる */
+.commitment__col--wide {
+  width: 196px;
+}
+
+/* アイコン円形バッジ（Figma の ~90px 正方形アイコン画像を円形ラップで再現） */
+.commitment__icon-wrap {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: #ede4d8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 7px;
+  flex-shrink: 0;
+}
+
+/*
+  縦区切り線（Figma の 75×163px 装飾画像をCSSで代替）
+  margin-top: 33px = 区切り開始位置(y=206) - アイコン開始位置(y=173)
+  margin-left/right: 34px × 2 = 68px + 1px線 ≈ Figmaの列間スペース
+*/
+.commitment__divider {
+  width: 1px;
+  height: 163px;
+  background-color: #cec4ba;
+  flex-shrink: 0;
+  align-self: flex-start;
+  margin: 33px 34px 0;
+}
+
+/* 列見出し */
+.commitment__heading {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 30px;
+  margin-bottom: 5px;
+  white-space: nowrap;
+}
+
+/* 本文（Figma: 11.57px, line-height 21.18px, text-align center） */
+.commitment__text {
+  font-family: var(--font-serif);
+  font-size: 11.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 21px;
+}
+
+/* ── 右マスク写真 ────────────────────────────────────────── */
+/*
+  Figma の SVGベクターマスクを clip-path polygon で近似。
+  左上から右下方向への斜め切り（左上端10%から左下端0%）で
+  Figmaの有機的な斜め境界を表現。
+*/
+.commitment__photo-mask {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 413px;
+  height: 471px;
+  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 0% 100%);
+  overflow: hidden;
+}
+
+.commitment__photo-mask img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 5.5 Voice ─────────────────────────────────────────────── */
+/*
+  Figma参照:
+    セクション高さ   h=373   bg=#ffffff
+    左パネル         w=320   装飾画像 left=144 top=125 / ラベル left=167 top=198
+    カード群         left=320  top=89  gap=20px
+    カード           w=262  h=196  border=2px solid #f9f6f1  radius=6px  shadow=なし
+    星画像           card内 left=12  top=2   w≈117  h=44
+    本文             card内 left=21  top=49  font=13.2px  lh=24.16px
+    アバター         card内 left=18  top=139  w=41〜44px  円形
+    ユーザー名       card内 left=67  top=147  font=10.6px
+*/
+.section-voice {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 373px;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* ── 左パネル（装飾画像＋セクションラベル） ─────────────── */
+.voice__side {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 320px;
+  height: 373px;
+}
+
+.voice__deco {
+  position: absolute;
+  left: 144px;
+  top: 125px;
+  width: 144px;
+  height: 78px;
+  object-fit: contain;
+}
+
+.voice__label {
+  position: absolute;
+  left: 167px;
+  top: 198px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 30px;
+  white-space: nowrap;
+}
+
+/* ── カード横並び ────────────────────────────────────────── */
+.voice__cards {
+  position: absolute;
+  left: 320px;
+  top: 89px;
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ── レビューカード ──────────────────────────────────────── */
+/*
+  Figma: border=2px solid #f9f6f1 / border-radius=6px
+  box-shadow: Figma未検出だが淡い影を追加してカード境界を補完
+*/
+.voice-card {
+  position: relative;
+  width: 262px;
+  height: 196px;
+  background-color: #ffffff;
+  border: 2px solid #f9f6f1;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(90, 81, 68, 0.07);
+}
+
+/* 星評価エリア（card-relative: left=12 / top=6） */
+.voice-card__stars {
+  position: absolute;
+  left: 12px;
+  top: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.voice-card__star-marks {
+  font-size: 20px;
+  line-height: 1;
+  color: var(--color-accent);   /* テラコッタ #C04E2A */
+  letter-spacing: 2px;
+}
+
+.voice-card__score {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 1;
+}
+
+/* レビュー本文（card-relative: left=21 / top=49） */
+.voice-card__text {
+  position: absolute;
+  left: 21px;
+  top: 49px;
+  width: 220px;
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 24px;
+}
+
+/* ユーザー情報フッター（card-relative: left=18 / top=139） */
+.voice-card__user {
+  position: absolute;
+  left: 18px;
+  top: 139px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* アバター（border-radius:50% で円形クリッピング） */
+.voice-card__avatar {
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.voice-card__name {
+  font-family: var(--font-serif);
+  font-size: 10.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 19px;
+  white-space: nowrap;
+}
+
+/* ============================================================
+   5.6 Access / FAQ
+   ============================================================ */
+
+.section-access-faq {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 412px;
+  background-color: #f9f6f1;
+  overflow: hidden;
+}
+
+/* --- Access --- */
+
+.af-access__heading {
+  position: absolute;
+  left: 131px;
+  top: 107px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.af-access__info {
+  position: absolute;
+  left: 131px;
+  top: 152px;
+  width: 178px;
+  font-style: normal;
+}
+
+.af-access__row {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.af-access__row:first-child {
+  border-top: 1px solid #d9d9d9;
+}
+
+.af-access__label {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 400;
+  color: #5a5144;
+  width: 36px;
+  flex-shrink: 0;
+  padding-top: 1px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+}
+
+.af-access__info dd {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.af-access__tel {
+  color: #5a5144;
+  text-decoration: none;
+}
+
+.af-access__map {
+  position: absolute;
+  left: 322px;
+  top: 51px;
+  width: 300px;
+  height: 299px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.af-access__map img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* --- FAQ --- */
+
+.af-faq__heading {
+  position: absolute;
+  left: 660px;
+  top: 60px;
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.af-faq__list {
+  position: absolute;
+  left: 660px;
+  top: 128px;
+  width: 440px;
+  border-top: 1px solid #d9d9d9;
+}
+
+.af-faq__item {
+  border-bottom: 1px solid #d9d9d9;
+}
+
+.af-faq__q {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 52px;
+  padding: 0 15px 0 10px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  cursor: default;
+}
+
+.af-faq__icon {
+  font-weight: 700;
+  font-size: 15px;
+  color: #5a5144;
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.af-faq__a {
+  display: none;
+}
+
+/* ============================================================
+   5.7 Final CTA
+   ============================================================ */
+
+.section-final-cta {
+  width: 100%;
+  min-width: 1280px;
+  background-color: #f5f0ea;
+  padding: 52px 52px 60px;
+  box-sizing: border-box;
+}
+
+.fcta__panel {
+  position: relative;
+  border-radius: 20px;
+  overflow: hidden;
+  height: 350px;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* 背景写真 */
+.fcta__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.fcta__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* テキスト可読性オーバーレイ */
+.fcta__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(249, 246, 241, 0.58);
+}
+
+/* 装飾写真カード */
+.fcta__photo {
+  position: absolute;
+  margin: 0;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fcta__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.fcta__photo--left {
+  left: 56px;
+  bottom: 32px;
+  width: 210px;
+  height: 100px;
+}
+
+.fcta__photo--center {
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 22px;
+  width: 250px;
+  height: 110px;
+}
+
+.fcta__photo--right {
+  right: 56px;
+  bottom: 38px;
+  width: 200px;
+  height: 90px;
+}
+
+/* コンテンツ（見出し・説明文・ボタン） */
+.fcta__content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 52px;
+}
+
+.fcta__heading {
+  font-family: var(--font-serif);
+  font-size: 35px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 50px;
+  margin: 0 0 10px;
+  text-align: center;
+}
+
+.fcta__subtext {
+  font-family: var(--font-serif);
+  font-size: 13.5px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 1.6;
+  margin: 0 0 28px;
+  text-align: center;
+}
+
+.fcta__buttons {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+}
+
+.fcta__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 28px;
+  border-radius: 22px;
+  font-family: var(--font-sans);
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: opacity 0.2s;
+}
+
+.fcta__btn:hover {
+  opacity: 0.8;
+}
+
+.fcta__btn--primary {
+  background-color: #5a5144;
+  color: #f9f6f1;
+  border: 1px solid #5a5144;
+}
+
+.fcta__btn--outline {
+  background-color: transparent;
+  color: #5a5144;
+  border: 1px solid #5a5144;
+}
+
+/* ============================================================
+   6. Site Footer
+   ============================================================ */
+
+.site-footer {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 105px;
+  background-color: #ffffff;
+  border-top: 1px solid #e8e2db;
+  overflow: hidden;
+}
+
+/* ロゴ */
+.site-footer__logo-link {
+  position: absolute;
+  left: 115px;
+  top: 24px;
+  display: block;
+  line-height: 0;
+}
+
+.site-footer__logo {
+  width: 115px;
+  height: 58px;
+  object-fit: contain;
+  display: block;
+}
+
+/* SNS アイコン */
+.site-footer__social {
+  position: absolute;
+  left: 268px;
+  top: 0;
+  height: 105px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-footer__social-link {
+  display: flex;
+  align-items: center;
+  opacity: 1;
+  transition: opacity 0.2s;
+}
+
+.site-footer__social-link:hover {
+  opacity: 0.65;
+}
+
+.site-footer__social-link img {
+  display: block;
+  object-fit: contain;
+}
+
+/* ナビゲーション + コピーライト */
+.site-footer__nav-wrap {
+  position: absolute;
+  left: 510px;
+  top: 50%;
+  transform: translateY(-50%);
+  margin-top: -4px;
+}
+
+.site-footer__nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 5px;
+}
+
+.site-footer__nav-link {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 400;
+  color: #686259;
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  transition: opacity 0.2s;
+}
+
+.site-footer__nav-link:hover {
+  opacity: 0.65;
+}
+
+.site-footer__nav-sep {
+  font-family: var(--font-sans);
+  font-size: 12px;
+  color: #b0a89e;
+  line-height: 1;
+}
+
+.site-footer__copy {
+  font-family: var(--font-sans);
+  font-size: 9.5px;
+  font-weight: 300;
+  color: #686259;
+  letter-spacing: 0.04em;
+  margin: 0;
+  line-height: 1;
+}
+
+/* ページの先頭へ */
+.site-footer__totop {
+  position: absolute;
+  right: 115px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.site-footer__totop:hover {
+  opacity: 0.65;
+}
+
+.site-footer__totop-arrow {
+  font-size: 12px;
+  color: #686259;
+  line-height: 1;
+}
+
+.site-footer__totop-label {
+  font-family: var(--font-sans);
+  font-size: 9px;
+  font-weight: 300;
+  color: #686259;
+  letter-spacing: 0.12em;
+  line-height: 1;
+}

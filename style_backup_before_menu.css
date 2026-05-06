@@ -1,0 +1,305 @@
+/* ============================================================
+   margot COFFEE & BAKE
+   ============================================================ */
+
+
+/* ── 1. Design Tokens ───────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-accent:  #C04E2A;   /* テラコッタ */
+  --color-text:    #3D2212;   /* ダークブラウン */
+  --color-nav:     #686259;   /* ウォームグレー */
+  --color-bg:      #F5EDE0;   /* クリームベージュ */
+
+  /* Fonts */
+  --font-serif: 'Noto Serif JP', serif;
+  --font-sans:  'Noto Sans JP', sans-serif;
+}
+
+
+/* ── 2. Reset ───────────────────────────────────────────────── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--color-bg);
+}
+
+a   { text-decoration: none; }
+img { display: block; max-width: 100%; }
+
+
+/* ── 3. Components ──────────────────────────────────────────── */
+
+/* 3.1 Button ─────────────────────────────────────────────── */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-sans);
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  border-radius: 50px;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: opacity 0.2s ease;
+}
+
+.btn:hover { opacity: 0.8; }
+
+.btn__icon { flex-shrink: 0; }
+
+.btn--primary {
+  background-color: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #fff;
+  padding: 18px 32px;
+}
+
+.btn--outline {
+  background-color: transparent;
+  border-color: var(--color-accent);
+  color: var(--color-accent);
+  padding: 17px 32px;
+}
+
+/* ヘッダー右端のCTA */
+.btn--sm {
+  font-size: 14px;
+  padding: 15px 26px;
+}
+
+
+/* 3.2 Header ─────────────────────────────────────────────── */
+/*
+  Figma参照:
+    ロゴ  x=79   y=41   w=160  h=80
+    ナビ  x=477  y=63   (中央寄せ)
+    CTA   x=1020 y=24   w=196  h=104  → ヘッダー高さ = 24+104 = 128px
+    左右余白: 左=79px / 右=1277-1020-196=61px
+*/
+.header {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  height: 128px;
+  padding: 0 61px 0 79px;
+}
+
+.header__logo { flex-shrink: 0; }
+
+.header__logo img {
+  width: 160px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.header__nav {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-nav);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover { color: var(--color-accent); }
+
+
+/* ── 4. Sections ────────────────────────────────────────────── */
+
+/* 4.1 FV ─────────────────────────────────────────────────── */
+.fv {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-width: 1280px;
+  min-height: 719px;
+  overflow: hidden;
+  background-color: var(--color-bg);
+}
+
+/* 背景画像（左:ウォームテクスチャ + 右:カフェ写真 の合成1枚） */
+.fv__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fv__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left top;   /* 左側テキストエリアを基準に拡縮 */
+}
+
+
+/* 4.2 Hero ───────────────────────────────────────────────── */
+/*
+  Figma参照:
+    ヒーロー = ヘッダー(128px)の下 残り全高
+    植物イラスト  x=394  y=128  w=118  h=118
+    見出し画像    x=138  y=164  w=388  h=152
+    サブコピー    x=138  y=296  w=357  h=160
+    ボタン群      x=141  y=433
+*/
+.hero {
+  position: relative;
+  z-index: 10;
+  height: calc(100vh - 128px);
+  min-height: 591px;
+}
+
+/* 植物イラスト（装飾） */
+.hero__botanical {
+  position: absolute;
+  top: 0;
+  left: 30.85%;    /* 394 / 1277 */
+  width: 9.24%;    /* 118 / 1277 */
+  aspect-ratio: 1;
+  z-index: 1;
+}
+
+.hero__botanical img {
+  width: 100%;
+  height: auto;
+}
+
+/* テキスト＋ボタン ブロック */
+.hero__content {
+  position: relative;
+  z-index: 2;
+  padding-top: 36px;     /* 164 - 128(header) */
+  padding-left: 138px;   /* 見出しのFigma x座標 */
+  max-width: 540px;      /* テキストを左エリア内に収める */
+}
+
+.hero__headline {
+  font-family: var(--font-serif);
+  font-size: 62px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--color-text);
+  letter-spacing: 0.02em;
+  margin-bottom: 16px;
+}
+
+.hero__sub {
+  font-family: var(--font-sans);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 2.0;
+  color: var(--color-text);
+  letter-spacing: 0.06em;
+  margin-bottom: 40px;
+}
+
+.hero__btns {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+
+/* ── 5. 以降のセクションはここに追加 ───────────────────────── */
+
+
+/* 5.1 Concept ───────────────────────────────────────────── */
+/*
+  Figma参照:
+    セクション高さ   h=485   bg=#fcf9f6
+    メイン写真       left=162  top=75   w=526  h=350
+    サブ写真         left=678  top=65   w=177  h=98
+    ラベル           left=730  top=174
+    キャッチ         left=730  top=220  (ラベル bottom+16px)
+    本文             left=730  top=297  (キャッチ bottom+17px)
+    アクセント写真   left=996  top=255  w=162  h=162
+*/
+.concept {
+  position: relative;
+  width: 100%;
+  min-width: 1280px;
+  height: 485px;
+  background-color: #fcf9f6;
+  overflow: hidden;
+}
+
+.concept__photo-main {
+  position: absolute;
+  left: 162px;
+  top: 75px;
+  width: 526px;
+  height: 350px;
+  object-fit: cover;
+}
+
+.concept__photo-sub {
+  position: absolute;
+  left: 678px;
+  top: 65px;
+  width: 177px;
+  height: 98px;
+  object-fit: cover;
+}
+
+.concept__body {
+  position: absolute;
+  left: 730px;
+  top: 174px;
+}
+
+.concept__label {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 16px;
+}
+
+.concept__catch {
+  font-family: var(--font-serif);
+  font-size: 21px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.04em;
+  line-height: 30px;
+  margin-bottom: 17px;
+}
+
+.concept__text {
+  font-family: var(--font-serif);
+  font-size: 13px;
+  font-weight: 400;
+  color: #5a5144;
+  letter-spacing: 0.07em;
+  line-height: 22.9px;
+}
+
+.concept__accent {
+  position: absolute;
+  left: 996px;
+  top: 255px;
+  width: 162px;
+  height: 162px;
+  object-fit: cover;
+}

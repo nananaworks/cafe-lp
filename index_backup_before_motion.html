@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>margot COFFEE &amp; BAKE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <section class="fv">
+
+    <!--
+      背景画像 — 本番では同フォルダの "ChatGPT Image 2026年5月3日 20_33_57.png" に差替可
+    -->
+    <div class="fv__bg">
+      <img
+        src="assets/fvtop.png"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="header">
+
+      <a href="/" class="header__logo">
+        <!--
+          ロゴ — 本番では "ChatGPT Image 2026年5月3日 20_10_19.png" に差替可
+        -->
+        <img
+          src="assets/ChatGPT Image 2026年5月3日 20_10_19 1.png"
+          alt="margot COFFEE &amp; BAKE"
+        >
+      </a>
+
+      <nav class="header__nav" aria-label="グローバルナビゲーション">
+        <a href="#concept" class="nav-link">Concept</a>
+        <a href="#menu"    class="nav-link">Menu</a>
+        <a href="#space"   class="nav-link">Space</a>
+        <a href="#access"  class="nav-link">Access</a>
+        <a href="#access"  class="nav-link">FAQ</a>
+      </nav>
+
+      <a href="#" class="btn btn--primary btn--sm header__cta">
+        <svg class="btn__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="1" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+          <line x1="1" y1="6.5" x2="13" y2="6.5" stroke="currentColor" stroke-width="1.3"/>
+          <line x1="4.5" y1="1" x2="4.5" y2="4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+          <line x1="9.5" y1="1" x2="9.5" y2="4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        席を予約する
+      </a>
+
+    </header>
+
+    <!-- ヒーローエリア -->
+    <div class="hero">
+
+      <!--
+        植物イラスト（装飾）— 本番では "ChatGPT Image 2026年5月4日 11_43_14.png" に差替可
+      -->
+      <div class="hero__botanical" aria-hidden="true">
+        <img
+          src="ChatGPT%20Image%202026%E5%B9%B45%E6%9C%884%E6%97%A5%2011_43_14.png"
+          alt=""
+        >
+      </div>
+
+      <!-- 左側テキスト＋ボタン -->
+      <div class="hero__content">
+
+        <p class="hero__headline">
+          余白まで、<br>
+          おいしい時間。
+        </p>
+
+        <p class="hero__sub">
+          香り高いコーヒーと、<br>
+          やさしい光に包まれる街のカフェ。
+        </p>
+
+        <div class="hero__btns">
+
+          <a href="#" class="btn btn--primary">
+            <svg class="btn__icon" width="15" height="15" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="1" y1="6.5" x2="13" y2="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="4.5" y1="1" x2="4.5" y2="4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="9.5" y1="1" x2="9.5" y2="4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            席を予約する
+          </a>
+
+          <a href="#" class="btn btn--outline">
+            <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="1" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="8" cy="8" r="2.8" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="11.5" cy="4.5" r="0.9" fill="currentColor"/>
+            </svg>
+            Instagramを見る
+          </a>
+
+          <a href="#" class="btn btn--outline">
+            <svg class="btn__icon" width="13" height="16" viewBox="0 0 13 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M6.5 1C3.74 1 1.5 3.24 1.5 6C1.5 9.75 6.5 15 6.5 15C6.5 15 11.5 9.75 11.5 6C11.5 3.24 9.26 1 6.5 1Z" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="6.5" cy="6" r="1.5" stroke="currentColor" stroke-width="1.2"/>
+            </svg>
+            アクセスを見る
+          </a>
+
+        </div>
+      </div>
+
+    </div><!-- /.hero -->
+
+  </section>
+
+  <!-- ── Concept セクション ──────────────────────────────── -->
+  <section class="concept" id="concept">
+    <div class="section-inner">
+
+    <!--
+      メイン写真 — 本番では "ChatGPT Image 2026年5月4日 11_37_15.png" に差替可
+    -->
+    <img
+      class="concept__photo-main"
+      src="assets/ChatGPT Image 2026年5月4日 11_37_15 1.png"
+      alt="カフェ マーゴット 店内"
+    >
+
+    <!--
+      サブ写真 — 本番では "ChatGPT Image 2026年5月3日 23_40_18.png" に差替可
+    -->
+    <img
+      class="concept__photo-sub"
+      src="assets/ChatGPT Image 2026年5月3日 23_40_18 1.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <!-- テキストブロック -->
+    <div class="concept__body">
+      <p class="concept__label">カフェ マーゴットについて</p>
+      <p class="concept__catch">
+        朝の一杯から、午後の作業時間まで。<br>
+        心地よさが続くカフェ。
+      </p>
+      <p class="concept__text">
+        スペシャルティコーヒーと手作りのフードで、<br>
+        日常の中に、ふっと深呼吸できる時間を。<br>
+        おひとりでも、誰かとでも、<br>
+        思い思いの時間をお過ごしください。
+      </p>
+    </div>
+
+    <!--
+      アクセント写真（正方形）— 本番では "ChatGPT Image 2026年5月3日 20_52_42.png" に差替可
+    -->
+    <img
+      class="concept__accent"
+      src="assets/ChatGPT Image 2026年5月3日 20_52_42 1.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    </div>
+  </section>
+
+  <!-- ── Menu セクション ──────────────────────────────────── -->
+  <section class="section-menu" id="menu">
+    <div class="section-inner">
+
+    <!--
+      装飾画像（左上）— 本番では "ChatGPT Image 2026年5月3日 23_57_04.png" に差替可
+    -->
+    <img
+      class="section-menu__deco"
+      src="assets/ChatGPT Image 2026年5月3日 23_57_04 1.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <h2 class="section-menu__heading">人気のメニュー</h2>
+
+    <!-- カードリスト（4枚構成） -->
+    <ul class="section-menu__cards">
+
+      <li>
+        <article class="menu-card">
+          <div class="menu-card__img">
+            <!--
+              Card 1 — 本番では "ChatGPT Image 2026年5月3日 23_56_59.png" に差替可
+            -->
+            <img
+              src="assets/Mask group.png"
+              alt="カフェラテ"
+            >
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__name">カフェラテ</p>
+            <p class="menu-card__desc">エチオピアの豆を使用した、<br>やさしい甘みのラテ。</p>
+            <p class="menu-card__price">¥650</p>
+          </div>
+        </article>
+      </li>
+
+      <li>
+        <article class="menu-card">
+          <div class="menu-card__img">
+            <!--
+              Card 2 — 本番では "ChatGPT Image 2026年5月3日 23_56_54.png" に差替可
+            -->
+            <img
+              src="assets/Mask group-1.png"
+              alt="季節のタルト"
+            >
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__name">季節のタルト</p>
+            <p class="menu-card__desc">旬のフルーツをたっぷり使った、<br>見た目も華やかなタルト。</p>
+            <p class="menu-card__price">¥780</p>
+          </div>
+        </article>
+      </li>
+
+      <li>
+        <article class="menu-card">
+          <div class="menu-card__img">
+            <!--
+              Card 3 — 本番では "ChatGPT Image 2026年5月3日 23_40_34.png" に差替可
+            -->
+            <img
+              src="assets/Mask group-2.png"
+              alt="クロワッサンサンド"
+            >
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__name">クロワッサンサンド</p>
+            <p class="menu-card__desc">サクッと香ばしいクロワッサンに、<br>たっぷりの具材をサンド。</p>
+            <p class="menu-card__price">¥880</p>
+          </div>
+        </article>
+      </li>
+
+      <li>
+        <article class="menu-card">
+          <div class="menu-card__img">
+            <!--
+              Card 4 — 本番では "ChatGPT Image 2026年5月3日 23_40_29.png" に差替可
+            -->
+            <img
+              src="assets/Mask group-3.png"
+              alt="自家製プリン"
+            >
+          </div>
+          <div class="menu-card__body">
+            <p class="menu-card__name">自家製プリン</p>
+            <p class="menu-card__desc">卵のコクとほろ苦カラメルの、<br>やさしい味わい。</p>
+            <p class="menu-card__price">¥550</p>
+          </div>
+        </article>
+      </li>
+
+    </ul>
+
+    </div>
+  </section>
+
+  <!-- ── Space セクション ─────────────────────────────────── -->
+  <section class="section-space" id="space">
+    <div class="section-inner">
+
+    <!-- ─ 左エリア: コラージュ写真 ─ -->
+
+    <!--
+      メイン大写真 — 本番では "ChatGPT Image 2026年5月3日 23_57_50.png" に差替可
+    -->
+    <img
+      class="space__photo-main"
+      src="assets/ChatGPT Image 2026年5月3日 23_57_50 1.png"
+      alt="カフェ マーゴット 店内空間"
+    >
+
+    <!--
+      小丸写真①（左上）— 本番では "ChatGPT Image 2026年5月3日 23_40_06.png" に差替可
+    -->
+    <div class="space__photo-round space__photo-round--tl">
+      <img
+        src="assets/Mask group-4.png"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+
+    <!--
+      小丸写真②（右下）— 本番では "ChatGPT Image 2026年5月3日 23_40_13.png" に差替可
+    -->
+    <div class="space__photo-round space__photo-round--br">
+      <img
+        src="assets/Mask group-5.png"
+        alt=""
+        aria-hidden="true"
+      >
+    </div>
+
+    <!-- ─ 右エリア: 装飾写真 ─ -->
+
+    <!--
+      小横長写真 — 本番では "ChatGPT Image 2026年5月3日 23_57_41.png" に差替可
+    -->
+    <img
+      class="space__photo-wide"
+      src="assets/ChatGPT Image 2026年5月3日 23_57_41 1.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <!--
+      正方形写真① — 本番では "ChatGPT Image 2026年5月4日 11_49_01.png" に差替可
+    -->
+    <img
+      class="space__photo-sq1"
+      src="assets/ChatGPT Image 2026年5月4日 11_49_01 1.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <!--
+      正方形写真② — 本番では "ChatGPT Image 2026年5月4日 11_50_07.png" に差替可
+    -->
+    <img
+      class="space__photo-sq2"
+      src="assets/ChatGPT Image 2026年5月4日 11_50_07 1.png"
+      alt=""
+      aria-hidden="true"
+    >
+
+    <!-- ─ 右エリア: テキスト ─ -->
+    <div class="space__body">
+      <p class="space__catch">
+        居心地のよさも、<br>
+        メニューのひとつ。
+      </p>
+      <p class="space__text">
+        自然光が差し込む開放的な空間で、<br>
+        ゆったりとした時間をお過ごしください。
+      </p>
+    </div>
+
+    <!-- ─ 設備アイコン4点（右エリア下部）─ -->
+    <ul class="space__icons">
+
+      <li class="space__icon-item">
+        <span class="space__icon-badge" aria-hidden="true">
+          <svg width="26" height="21" viewBox="0 0 26 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="13" cy="18.5" r="1.5" fill="currentColor"/>
+            <path d="M9.2 14.6A5.6 5.6 0 0 1 13 13c1.5 0 2.9.6 3.9 1.6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M5.6 10.7A10.6 10.6 0 0 1 13 8c2.9 0 5.5 1.2 7.4 3.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M1.6 6.7A15.6 15.6 0 0 1 13 2c4.3 0 8.2 1.8 11 4.8" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <p class="space__icon-label">Wi-Fi</p>
+      </li>
+
+      <li class="space__icon-item">
+        <span class="space__icon-badge" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 3v6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+            <path d="M8.2 5.7A8 8 0 1 0 15.8 5.7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <p class="space__icon-label">電源あり</p>
+      </li>
+
+      <li class="space__icon-item">
+        <span class="space__icon-badge" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="3" y="4" width="18" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6"/>
+            <line x1="12" y1="9" x2="12" y2="20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <line x1="8" y1="20" x2="16" y2="20" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </span>
+        <p class="space__icon-label">Counter<br>Seats</p>
+      </li>
+
+      <li class="space__icon-item">
+        <span class="space__icon-badge" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M9 3v5a3 3 0 0 1-3 3v7" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M6 3v4M7.5 3v4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            <path d="M15 3c0 2.5-2 4-2 6v9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+        <p class="space__icon-label">Lunch<br>Time</p>
+      </li>
+
+    </ul>
+
+    </div>
+  </section>
+
+  <!-- ── Commitment セクション ────────────────────────────── -->
+  <section class="section-commitment" id="commitment">
+    <div class="section-inner">
+
+    <!--
+      セクションタイトル画像 — 本番では "ChatGPT Image 2026年5月4日 00_00_09.png" に差替可
+    -->
+    <img
+      class="commitment__title-img"
+      src="assets/ChatGPT Image 2026年5月3日 23_40_18 1.png"
+      alt="Commitment こだわり"
+    >
+
+    <!-- ─ 3カラム こだわり ─ -->
+    <div class="commitment__cols">
+
+      <!-- 1列目 : 豆へのこだわり -->
+      <div class="commitment__col">
+        <div class="commitment__icon-wrap" aria-hidden="true">
+          <svg width="36" height="30" viewBox="0 0 36 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <ellipse cx="18" cy="15" rx="12" ry="8" stroke="#5a5144" stroke-width="1.5"/>
+            <path d="M6.5 15C9.5 10 14 11.5 18 15C22 18.5 26.5 20 29.5 15" stroke="#5a5144" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="commitment__heading">豆へのこだわり</h3>
+        <p class="commitment__text">
+          世界中から厳選した<br>
+          スペシャルティコーヒー。<br>
+          香りと余韻を大切に、<br>
+          丁寧に抽出します。
+        </p>
+      </div>
+
+      <div class="commitment__divider" aria-hidden="true"></div>
+
+      <!-- 2列目 : 素材のやさしさ -->
+      <div class="commitment__col">
+        <div class="commitment__icon-wrap" aria-hidden="true">
+          <svg width="30" height="34" viewBox="0 0 30 34" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M15 30C15 30 4 22 4 13C4 7 8.5 3 15 3C21.5 3 26 7 26 13C26 22 15 30 15 30Z" stroke="#5a5144" stroke-width="1.5"/>
+            <path d="M15 30V13" stroke="#5a5144" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M15 20C15 20 9 17 9 13" stroke="#5a5144" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="commitment__heading">素材のやさしさ</h3>
+        <p class="commitment__text">
+          季節の食材や<br>
+          オーガニック素材を使用。<br>
+          体にやさしいメニューを<br>
+          心がけています。
+        </p>
+      </div>
+
+      <div class="commitment__divider" aria-hidden="true"></div>
+
+      <!-- 3列目 : 過ごしやすい空間設計 -->
+      <div class="commitment__col commitment__col--wide">
+        <div class="commitment__icon-wrap" aria-hidden="true">
+          <svg width="36" height="28" viewBox="0 0 36 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5 11V7C5 5.9 5.9 5 7 5H29C30.1 5 31 5.9 31 7V11" stroke="#5a5144" stroke-width="1.5" stroke-linecap="round"/>
+            <path d="M3 11H33V19H3V11Z" stroke="#5a5144" stroke-width="1.5" stroke-linejoin="round"/>
+            <path d="M7 19V26M29 19V26" stroke="#5a5144" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <h3 class="commitment__heading">過ごしやすい空間設計</h3>
+        <p class="commitment__text">
+          おひとりでも、<br>
+          グループでも。<br>
+          居心地よく過ごせる<br>
+          空間づくりを。
+        </p>
+      </div>
+
+    </div><!-- /.commitment__cols -->
+
+    <!-- ─ 右マスク写真 ─ -->
+    <div class="commitment__photo-mask">
+      <!--
+        右写真 — 本番では "ChatGPT Image 2026年5月4日 11_51_46.png" に差替可
+      -->
+      <img
+        src="assets/Mask group-6.png"
+        alt="店内の様子"
+      >
+    </div>
+
+    </div>
+  </section>
+
+  <!-- ── Voice セクション ──────────────────────────────────── -->
+  <section class="section-voice" id="voice">
+    <div class="section-inner">
+
+    <!-- ─ 左パネル: セクションラベル ─ -->
+    <div class="voice__side">
+      <!--
+        装飾画像 — 本番では "ChatGPT Image 2026年5月3日 23_59_34.png" に差替可
+      -->
+      <img
+        class="voice__deco"
+        src="assets/ChatGPT Image 2026年5月3日 23_59_34 1.png"
+        alt=""
+        aria-hidden="true"
+      >
+      <p class="voice__label">お客様の声</p>
+    </div>
+
+    <!-- ─ レビューカード 3枚 ─ -->
+    <ul class="voice__cards">
+
+      <!-- Card 1 -->
+      <li>
+        <article class="voice-card">
+          <div class="voice-card__stars">
+            <span class="voice-card__star-marks" aria-label="5つ星">★★★★★</span>
+            <span class="voice-card__score">5.0</span>
+          </div>
+          <p class="voice-card__text">
+            ラテがとっても美味しくて、<br>
+            ついつい長居してしまいます。<br>
+            落ち着く雰囲気も大好きです。
+          </p>
+          <footer class="voice-card__user">
+            <!--
+              アバター — 本番では "ChatGPT Image 2026年5月3日 23_58_58.png" に差替可
+            -->
+            <img
+              class="voice-card__avatar"
+              src="assets/ChatGPT Image 2026年5月3日 23_58_58 1.png"
+              alt=""
+              aria-hidden="true"
+              width="41"
+              height="41"
+            >
+            <p class="voice-card__name">30代女性 / 会社員</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- Card 2 -->
+      <li>
+        <article class="voice-card">
+          <div class="voice-card__stars">
+            <span class="voice-card__star-marks" aria-label="5つ星">★★★★★</span>
+            <span class="voice-card__score">5.0</span>
+          </div>
+          <p class="voice-card__text">
+            作業がしやすくて集中できます。<br>
+            電源やWi-Fiがあるのも<br>
+            ありがたい！
+          </p>
+          <footer class="voice-card__user">
+            <!--
+              アバター — 本番では "ChatGPT Image 2026年5月3日 23_59_10.png" に差替可
+            -->
+            <img
+              class="voice-card__avatar"
+              src="assets/ChatGPT Image 2026年5月3日 23_59_10 1.png"
+              alt=""
+              aria-hidden="true"
+              width="43"
+              height="43"
+            >
+            <p class="voice-card__name">20代女性 / フリーランス</p>
+          </footer>
+        </article>
+      </li>
+
+      <!-- Card 3 -->
+      <li>
+        <article class="voice-card">
+          <div class="voice-card__stars">
+            <span class="voice-card__star-marks" aria-label="5つ星">★★★★★</span>
+            <span class="voice-card__score">5.0</span>
+          </div>
+          <p class="voice-card__text">
+            ランチもスイーツも全部美味しい。<br>
+            友達を連れてきたくなる<br>
+            素敵なカフェです。
+          </p>
+          <footer class="voice-card__user">
+            <!--
+              アバター — 本番では "ChatGPT Image 2026年5月3日 23_59_17.png" に差替可
+            -->
+            <img
+              class="voice-card__avatar"
+              src="assets/ChatGPT Image 2026年5月3日 23_59_17 1.png"
+              alt=""
+              aria-hidden="true"
+              width="44"
+              height="44"
+            >
+            <p class="voice-card__name">40代女性 / 主婦</p>
+          </footer>
+        </article>
+      </li>
+
+    </ul>
+
+    </div>
+  </section>
+
+  <!-- ── Access / FAQ セクション ───────────────────────────── -->
+  <section class="section-access-faq" id="access">
+    <div class="section-inner">
+
+    <!-- 左カラム: よくあるご質問 -->
+    <div class="af-col af-col--faq">
+
+      <h2 class="af-faq__heading">よくあるご質問</h2>
+
+      <dl class="af-faq__list">
+
+        <div class="af-faq__item">
+          <dt class="af-faq__q" role="button" tabindex="0" aria-expanded="false">
+            <span>予約は必要ですか？</span>
+            <span class="af-faq__icon" aria-hidden="true">＋</span>
+          </dt>
+          <dd class="af-faq__a">ご予約は不要です。当日のご来店をお待ちしております。</dd>
+        </div>
+
+        <div class="af-faq__item">
+          <dt class="af-faq__q" role="button" tabindex="0" aria-expanded="false">
+            <span>Wi-Fiや電源は使えますか？</span>
+            <span class="af-faq__icon" aria-hidden="true">＋</span>
+          </dt>
+          <dd class="af-faq__a">はい、全席でWi-Fiと電源をご利用いただけます。お仕事やお勉強にもどうぞ。</dd>
+        </div>
+
+        <div class="af-faq__item">
+          <dt class="af-faq__q" role="button" tabindex="0" aria-expanded="false">
+            <span>テイクアウトはできますか？</span>
+            <span class="af-faq__icon" aria-hidden="true">＋</span>
+          </dt>
+          <dd class="af-faq__a">コーヒー・ドリンク類はテイクアウト可能です。スイーツやフードはイートインのみとなります。</dd>
+        </div>
+
+        <div class="af-faq__item">
+          <dt class="af-faq__q" role="button" tabindex="0" aria-expanded="false">
+            <span>子ども連れでも入れますか？</span>
+            <span class="af-faq__icon" aria-hidden="true">＋</span>
+          </dt>
+          <dd class="af-faq__a">もちろんです。お子様連れのお客様も大歓迎です。ベビーカーでのご来店もお気軽にどうぞ。</dd>
+        </div>
+
+      </dl>
+
+    </div><!-- /.af-col--faq -->
+
+    <!-- 右カラム: アクセス -->
+    <div class="af-col af-col--access">
+
+      <h2 class="af-access__heading">アクセス</h2>
+
+      <div class="af-access__body">
+
+        <address class="af-access__info">
+          <dl>
+            <div class="af-access__row">
+              <dt class="af-access__label">住所</dt>
+              <dd>〒150-0001 東京都渋谷区神宮前5-10-1<br>margotビル 1F</dd>
+            </div>
+            <div class="af-access__row">
+              <dt class="af-access__label">最寄り</dt>
+              <dd>東京メトロ 表参道駅 A2出口 徒歩5分</dd>
+            </div>
+            <div class="af-access__row">
+              <dt class="af-access__label">電話</dt>
+              <dd><a href="tel:0312345678" class="af-access__tel">03-1234-5678</a></dd>
+            </div>
+            <div class="af-access__row">
+              <dt class="af-access__label">営業時間</dt>
+              <dd>平日 8:00〜20:00<br>土日祝 9:00〜21:00</dd>
+            </div>
+            <div class="af-access__row">
+              <dt class="af-access__label">定休日</dt>
+              <dd>不定休</dd>
+            </div>
+          </dl>
+        </address>
+
+        <div class="af-access__map">
+          <img
+            src="assets/〒150-0001 東京都渋谷区神宮前5-10-1 margotビル 1F.png"
+            alt="店舗地図"
+          >
+        </div>
+
+      </div><!-- /.af-access__body -->
+
+    </div><!-- /.af-col--access -->
+
+    </div>
+  </section>
+
+  <!-- ── Final CTA セクション ─────────────────────────────── -->
+  <section class="section-final-cta">
+
+    <div class="fcta__panel">
+
+      <!-- 見出し・説明文・ボタン -->
+      <div class="fcta__content">
+        <h2 class="fcta__heading">今日のひと息を、ここで。</h2>
+        <p class="fcta__subtext">お席のご予約やお問い合わせは、お気軽にどうぞ。</p>
+        <div class="fcta__buttons">
+          <a href="#" class="btn btn--primary">
+            <svg class="btn__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="3" width="12" height="10" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="1" y1="6.5" x2="13" y2="6.5" stroke="currentColor" stroke-width="1.3"/>
+              <line x1="4.5" y1="1" x2="4.5" y2="4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+              <line x1="9.5" y1="1" x2="9.5" y2="4.5" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+            </svg>
+            席を予約する
+          </a>
+          <a href="#" class="btn btn--outline">
+            <svg class="btn__icon" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="1" width="14" height="14" rx="4" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="8" cy="8" r="2.8" stroke="currentColor" stroke-width="1.3"/>
+              <circle cx="11.5" cy="4.5" r="0.9" fill="currentColor"/>
+            </svg>
+            Instagramをフォロー
+          </a>
+          <a href="#" class="btn btn--outline">
+            <svg class="btn__icon" width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect x="1" y="2" width="12" height="9" rx="1.5" stroke="currentColor" stroke-width="1.3"/>
+              <path d="M1 4.5l6 4 6-4" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            お問い合わせ
+          </a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- ── フッター ──────────────────────────────────────────── -->
+  <footer class="site-footer">
+    <div class="site-footer__inner">
+
+      <!-- ロゴ — 本番では "ChatGPT Image 2026年5月3日 20_10_19.png" に差替可 -->
+      <a href="#" class="site-footer__logo-link">
+        <img
+          class="site-footer__logo"
+          src="assets/ChatGPT Image 2026年5月3日 20_10_19 1.png"
+          alt="margot COFFEE &amp; BAKE"
+          width="100"
+          height="50"
+        >
+      </a>
+
+      <!-- SNS アイコン -->
+      <ul class="site-footer__social">
+        <li>
+          <!-- Instagram — 本番では "ChatGPT Image 2026年5月4日 11_07_33.png" に差替可 -->
+          <a href="#" class="site-footer__social-link" aria-label="Instagram">
+            <img src="assets/ChatGPT Image 2026年5月4日 11_07_33 1.png" alt="Instagram" width="28" height="28">
+          </a>
+        </li>
+        <li>
+          <!-- LINE — 本番では "ChatGPT Image 2026年5月4日 11_05_24.png" に差替可 -->
+          <a href="#" class="site-footer__social-link" aria-label="LINE">
+            <img src="assets/ChatGPT Image 2026年5月4日 11_05_24 1.png" alt="LINE" width="24" height="24">
+          </a>
+        </li>
+        <li>
+          <!-- Discord — 本番では "ChatGPT Image 2026年5月4日 11_06_23.png" に差替可 -->
+          <a href="#" class="site-footer__social-link" aria-label="Discord">
+            <img src="assets/ChatGPT Image 2026年5月4日 11_06_23 1.png" alt="Discord" width="27" height="27">
+          </a>
+        </li>
+      </ul>
+
+      <!-- ナビゲーション + コピーライト -->
+      <div class="site-footer__nav-wrap">
+        <nav class="site-footer__nav" aria-label="フッターナビゲーション">
+          <a href="#concept" class="site-footer__nav-link">Concept</a>
+          <span class="site-footer__nav-sep" aria-hidden="true">/</span>
+          <a href="#menu" class="site-footer__nav-link">Menu</a>
+          <span class="site-footer__nav-sep" aria-hidden="true">/</span>
+          <a href="#space" class="site-footer__nav-link">Space</a>
+          <span class="site-footer__nav-sep" aria-hidden="true">/</span>
+          <a href="#access" class="site-footer__nav-link">Access</a>
+          <span class="site-footer__nav-sep" aria-hidden="true">/</span>
+          <a href="#access" class="site-footer__nav-link">FAQ</a>
+        </nav>
+        <p class="site-footer__copy">© margot COFFEE &amp; BAKE All Rights Reserved.</p>
+      </div>
+
+      <!-- ページの先頭へ -->
+      <a href="#" class="site-footer__totop" aria-label="ページの先頭へ">
+        <span class="site-footer__totop-arrow" aria-hidden="true">↑</span>
+        <span class="site-footer__totop-label">TOP</span>
+      </a>
+
+    </div>
+  </footer>
+
+  <script>
+    (function () {
+      var items = document.querySelectorAll('.af-faq__item');
+      items.forEach(function (item) {
+        var trigger = item.querySelector('.af-faq__q');
+        var icon    = item.querySelector('.af-faq__icon');
+
+        function toggle() {
+          var open = item.classList.toggle('is-open');
+          trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+          icon.textContent = open ? '－' : '＋';
+        }
+
+        trigger.addEventListener('click', toggle);
+        trigger.addEventListener('keydown', function (e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            toggle();
+          }
+        });
+      });
+    })();
+  </script>
+
+</body>
+</html>
