@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | margot COFFEE &amp; BAKE</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+  <!-- ── Header ────────────────────────────────────────────── -->
+  <header class="m-header">
+    <a href="index.html" class="m-header__logo">
+      <img
+        src="assets/ChatGPT Image 2026年5月3日 20_10_19 1.png"
+        alt="margot COFFEE &amp; BAKE"
+        width="88"
+        height="44"
+      >
+    </a>
+
+    <nav class="m-header__nav" aria-label="グローバルナビゲーション">
+      <a href="index.html"         class="m-nav-link">Home</a>
+      <a href="menu.html"          class="m-nav-link m-nav-link--active">Menu</a>
+      <a href="index.html#access"  class="m-nav-link">Access</a>
+      <a href="index.html#access"  class="m-nav-link">FAQ</a>
+    </nav>
+
+    <a href="#" class="m-btn m-btn--primary">席を予約する</a>
+  </header>
+
+  <!-- ── Hero ──────────────────────────────────────────────── -->
+  <section class="m-hero">
+    <p class="m-hero__en">Menu</p>
+    <h1 class="m-hero__ja">メニュー一覧</h1>
+    <p class="m-hero__lead">
+      香り高いコーヒーと、やさしい甘さのスイーツ、<br>
+      焼きたてのベイクメニューをゆっくりお楽しみください。
+    </p>
+  </section>
+
+  <!-- ── Main ──────────────────────────────────────────────── -->
+  <main class="m-main">
+
+    <!-- ─ Drink ──────────────────────────────────────────── -->
+    <section class="m-category" id="drink">
+      <div class="m-category__header">
+        <h2 class="m-category__en">Drink</h2>
+        <p class="m-category__ja">ドリンク</p>
+      </div>
+
+      <ul class="m-cards">
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item01.png" alt="カフェラテ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">カフェラテ</p>
+              <p class="m-card__desc">エチオピアの豆を使用した、やさしい甘みのラテ。</p>
+              <p class="m-card__price">¥650</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item02.png" alt="ハンドドリップコーヒー">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">ハンドドリップコーヒー</p>
+              <p class="m-card__desc">豆の個性を丁寧に引き出した、香り豊かな一杯。</p>
+              <p class="m-card__price">¥620</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item03.png" alt="アイスアメリカーノ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">アイスアメリカーノ</p>
+              <p class="m-card__desc">すっきりとした後味の、軽やかなアイスコーヒー。</p>
+              <p class="m-card__price">¥580</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item04.png" alt="カプチーノ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">カプチーノ</p>
+              <p class="m-card__desc">ふんわりミルクフォームを重ねた、まろやかな味わい。</p>
+              <p class="m-card__price">¥660</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item05.png" alt="自家製レモネード">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">自家製レモネード</p>
+              <p class="m-card__desc">レモンの酸味とやさしい甘さが広がる爽やかなドリンク。</p>
+              <p class="m-card__price">¥620</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item06.png" alt="季節のフルーツティー">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">季節のフルーツティー</p>
+              <p class="m-card__desc">旬の果実を合わせた、香り華やかなティー。</p>
+              <p class="m-card__price">¥680</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item07.png" alt="抹茶ミルクラテ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">抹茶ミルクラテ</p>
+              <p class="m-card__desc">抹茶のほろ苦さとミルクの甘みを合わせた一杯。</p>
+              <p class="m-card__price">¥700</p>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ─ Sweets ─────────────────────────────────────────── -->
+    <section class="m-category" id="sweets">
+      <div class="m-category__header">
+        <h2 class="m-category__en">Sweets</h2>
+        <p class="m-category__ja">スイーツ</p>
+      </div>
+
+      <ul class="m-cards">
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item08.png" alt="季節のタルト">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">季節のタルト</p>
+              <p class="m-card__desc">旬のフルーツをたっぷり使った、見た目も華やかなタルト。</p>
+              <p class="m-card__price">¥780</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item09.png" alt="自家製プリン">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">自家製プリン</p>
+              <p class="m-card__desc">卵のコクとほろ苦いカラメルの、やさしい味わい。</p>
+              <p class="m-card__price">¥550</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item10.png" alt="ガトーショコラ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">ガトーショコラ</p>
+              <p class="m-card__desc">濃厚なカカオの香りを楽しめる、しっとり食感のケーキ。</p>
+              <p class="m-card__price">¥720</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item11.png" alt="チーズケーキ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">チーズケーキ</p>
+              <p class="m-card__desc">なめらかな口どけと、ほどよい酸味の定番スイーツ。</p>
+              <p class="m-card__price">¥760</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item12.png" alt="キャロットケーキ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">キャロットケーキ</p>
+              <p class="m-card__desc">スパイスとナッツの香りが広がる、素朴な焼き菓子。</p>
+              <p class="m-card__price">¥690</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item13.png" alt="ベリーのショートケーキ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">ベリーのショートケーキ</p>
+              <p class="m-card__desc">軽いクリームと甘酸っぱいベリーを合わせた一品。</p>
+              <p class="m-card__price">¥820</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item14.png" alt="スコーンとジャム">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">スコーンとジャム</p>
+              <p class="m-card__desc">外はさっくり、中はしっとり。自家製ジャムを添えて。</p>
+              <p class="m-card__price">¥640</p>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ─ Bake ───────────────────────────────────────────── -->
+    <section class="m-category" id="bake">
+      <div class="m-category__header">
+        <h2 class="m-category__en">Bake</h2>
+        <p class="m-category__ja">ベイク</p>
+      </div>
+
+      <ul class="m-cards">
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item15.png" alt="クロワッサンサンド">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">クロワッサンサンド</p>
+              <p class="m-card__desc">サクッと香ばしいクロワッサンに、たっぷり具材をサンド。</p>
+              <p class="m-card__price">¥880</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item16.png" alt="ベーコンエッグトースト">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">ベーコンエッグトースト</p>
+              <p class="m-card__desc">朝食にもランチにも合う、香ばしい厚切りトースト。</p>
+              <p class="m-card__price">¥760</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item17.png" alt="ハーブチキンサンド">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">ハーブチキンサンド</p>
+              <p class="m-card__desc">やわらかなチキンとハーブの香りを楽しめるサンド。</p>
+              <p class="m-card__price">¥900</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item18.png" alt="アボカドとチーズのベーグル">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">アボカドとチーズのベーグル</p>
+              <p class="m-card__desc">クリーミーなアボカドとチーズを合わせた満足感のある一品。</p>
+              <p class="m-card__price">¥860</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item19.png" alt="焼きたてシナモンロール">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">焼きたてシナモンロール</p>
+              <p class="m-card__desc">シナモンの香りとやさしい甘さが広がるベイクメニュー。</p>
+              <p class="m-card__price">¥620</p>
+            </div>
+          </article>
+        </li>
+
+        <li>
+          <article class="m-card">
+            <div class="m-card__img">
+              <img src="assets/item20.png" alt="季節野菜のキッシュ">
+            </div>
+            <div class="m-card__body">
+              <p class="m-card__name">季節野菜のキッシュ</p>
+              <p class="m-card__desc">旬の野菜を使った、軽めのランチにも合うキッシュ。</p>
+              <p class="m-card__price">¥780</p>
+            </div>
+          </article>
+        </li>
+
+      </ul>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ─────────────────────────────────────────────── -->
+  <footer class="m-footer">
+    <div class="m-footer__inner">
+      <a href="index.html" class="m-footer__home">← Homeへ戻る</a>
+      <a href="index.html" class="m-footer__logo">
+        <img
+          src="assets/ChatGPT Image 2026年5月3日 20_10_19 1.png"
+          alt="margot COFFEE &amp; BAKE"
+          width="80"
+          height="40"
+        >
+      </a>
+      <p class="m-footer__copy">© margot COFFEE &amp; BAKE All Rights Reserved.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
